@@ -1,0 +1,6 @@
+E:\JustC#Things\Evklidis\Evklidis\bin\Debug\Evklidis.exe.config
+E:\JustC#Things\Evklidis\Evklidis\bin\Debug\Evklidis.exe
+E:\JustC#Things\Evklidis\Evklidis\bin\Debug\Evklidis.pdb
+E:\JustC#Things\Evklidis\Evklidis\obj\Debug\Evklidis.csprojResolveAssemblyReference.cache
+E:\JustC#Things\Evklidis\Evklidis\obj\Debug\Evklidis.exe
+E:\JustC#Things\Evklidis\Evklidis\obj\Debug\Evklidis.pdb
