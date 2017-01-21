@@ -1,0 +1,6 @@
+E:\JustC#Things\Pairs\Pairs\bin\Debug\Pairs.exe.config
+E:\JustC#Things\Pairs\Pairs\bin\Debug\Pairs.exe
+E:\JustC#Things\Pairs\Pairs\bin\Debug\Pairs.pdb
+E:\JustC#Things\Pairs\Pairs\obj\Debug\Pairs.csprojResolveAssemblyReference.cache
+E:\JustC#Things\Pairs\Pairs\obj\Debug\Pairs.exe
+E:\JustC#Things\Pairs\Pairs\obj\Debug\Pairs.pdb
