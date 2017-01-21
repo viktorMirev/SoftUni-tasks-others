@@ -1,0 +1,6 @@
+E:\JustC#Things\specialNummer\specialNummer\bin\Debug\specialNummer.exe.config
+E:\JustC#Things\specialNummer\specialNummer\bin\Debug\specialNummer.exe
+E:\JustC#Things\specialNummer\specialNummer\bin\Debug\specialNummer.pdb
+E:\JustC#Things\specialNummer\specialNummer\obj\Debug\specialNummer.csprojResolveAssemblyReference.cache
+E:\JustC#Things\specialNummer\specialNummer\obj\Debug\specialNummer.exe
+E:\JustC#Things\specialNummer\specialNummer\obj\Debug\specialNummer.pdb
