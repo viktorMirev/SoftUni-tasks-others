@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var input = Console.ReadLine();
+            var people = input.Split(' ');
+            var n = int.Parse(Console.ReadLine());
+            var queue = new Queue<string>(people);
+            var count = 0;
+            while (queue.Count > 1)
+            {
+                count++;
+                for (int i = 0; i < n-1; i++)
+                {
+                    string helper = queue.Dequeue();
+                    queue.Enqueue(helper);
+                }
+                if (IsPrime(count))
+                {
+                    Console.WriteLine($"Prime {queue.Peek()}");
+                  
+                }
+                else
+                {
+                    Console.WriteLine("Removed " + queue.Dequeue());
+                }
+
+            }
+            Console.WriteLine($"Last is { queue.Dequeue()}");
+        }
+        public static bool IsPrime(int number)
+        {
+            if (number == 1) return false;
+            if (number == 2) return true;
+
+            var boundary = (int)Math.Floor(Math.Sqrt(number));
+
+            for (int i = 2; i <= boundary; ++i)
+            {
+                if (number % i == 0) return false;
+            }
+
+            return true;
+        }
+    }
+}
