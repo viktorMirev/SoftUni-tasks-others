@@ -1,0 +1,10 @@
+public static long getFibonacci(int n, Dictionary<int, long> data )
+        {
+            if (n == 2) return 1;
+            if (n == 1) return 1;
+            if (data.ContainsKey(n)) return data[n];
+
+            var num = getFibonacci((n - 2), data) + getFibonacci((n - 1), data);
+            data.Add(n, num);
+            return num;
+        }
