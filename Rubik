@@ -1,0 +1,147 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+
+namespace lab
+{
+    class Program
+    {
+        public static void Main()
+        {
+            var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            var rubik = new int[input[0]][];
+            var counter = 1;
+            for (int i = 0; i < input[0]; i++)
+            {
+                var helper = new int[input[1]];
+                for (int j = 0; j < input[1]; j++)
+                {
+
+                    helper[j] = counter;
+                    counter++;
+                }
+                rubik[i] = helper;
+            }
+
+            var n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                var command = Console.ReadLine().Split(new char[]{' '}, StringSplitOptions.RemoveEmptyEntries);
+
+                switch (command[1])
+                {
+                    case "down":
+                    {
+                        var col = int.Parse(command[0]);
+                        var times = int.Parse(command[2]);
+                        var helper = new int[input[0]];
+
+                        for (int j = 0; j < input[0]; j++)
+                        {
+                            helper[j] = rubik[j][col];
+                        }
+
+                        for (int j = 0; j < input[0]; j++)
+                        {
+                            var nextId = (j + times) % helper.Length;
+                            rubik[nextId][col] = helper[j];
+                        }
+
+                            break;
+                    }
+
+                    case "up":
+                    {
+                        var col = int.Parse(command[0]);
+                        var times = int.Parse(command[2]);
+                        var helper = new int[input[0]];
+                        for (int j = 0; j < input[0]; j++)
+                        {
+                            helper[input[0] - 1 - j] = rubik[j][col];
+                        }
+                        
+
+                        for (int j = 0; j < input[0]; j++)
+                        {
+                            var nextId = (j + times) % helper.Length;
+                            rubik[input[0] - 1 - nextId][col] = helper[j];
+                        }
+                        
+
+                            break;
+                    }
+
+                    case "left":
+                    {
+                        var row = int.Parse(command[0]);
+                        var times = int.Parse(command[2]);
+                        var helper = new int[input[1]];
+                        rubik[row] = rubik[row].Reverse().ToArray();
+                        for (int j = 0; j < helper.Length; j++)
+                        {
+                            var nextId = (j + times) % helper.Length;
+                            helper[nextId] = rubik[row][j];
+                        }
+                            rubik[row] = helper.Reverse().ToArray();
+                        break;
+                          
+                    }
+
+                    case "right":
+                    {
+                        var row = int.Parse(command[0]);
+                        var times = int.Parse(command[2]);
+                        var helper = new int[input[1]];
+                        for (int j = 0; j < helper.Length; j++)
+                        {
+                            var nextId = (j + times) % helper.Length;
+                            helper[nextId] = rubik[row][j];
+                        }
+                        rubik[row] = helper;
+                        break;
+                    }
+                }
+
+              /*  foreach (var line in rubik)
+                {
+                    Console.WriteLine(string.Join(" ", line));
+                } */
+
+            }
+             counter = 1;
+            for (int i = 0; i < input[0]; i++)
+            {
+                for (int j = 0; j < input[1]; j++)
+                {
+                    if (rubik[i][j] != counter)
+                    {
+                        bool flag=false; 
+                        for (int k = 0; k < input[0]; k++)
+                        {
+                            for (int l = 0; l < input[1]; l++)
+                            {
+                                if (rubik[k][l] == counter)
+                                {
+                                    rubik[k][l] = rubik[i][j];
+                                    rubik[i][j] = counter;
+                                    Console.WriteLine($"Swap ({i}, {j}) with ({k}, {l})");
+                                    flag = true;
+                                    break;
+                                }
+                            }
+                            if (flag) break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No swap required");
+                    }
+                    counter++;
+                }
+            }
+        }
+    }
+}
