@@ -18,6 +18,9 @@ namespace Exercise
                 Console.WriteLine(string
                     .Format("{0,-10}|{1,7:f2}|{2,7:f2}|{3,7:f2}|{4,7:f4}|",data[0], double.Parse(data[1]), double.Parse(data[2]), double.Parse(data[3]), (double.Parse(data[1]) + double.Parse(data[2]) + double.Parse(data[3])) / 3));
             }
+            //{num,10} add in front of number enough to be 10 symbols long "    413546" 
+            //{num,-10} add after the number enough to be 10 symbols long  "2456      "
+            //{num,10;f2} the same + formatting
 
         }
     }
