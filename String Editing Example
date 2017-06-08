@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Exercise
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Name      |   CAdv|   COOP| AdvOOP|Average|");
+            for (int i = 0; i < n; i++)
+            {
+                var data = Console.ReadLine().Split(new char[] {',', ' ', '-'}, StringSplitOptions.RemoveEmptyEntries);
+                Console.WriteLine(string
+                    .Format("{0,-10}|{1,7:f2}|{2,7:f2}|{3,7:f2}|{4,7:f4}|",data[0], double.Parse(data[1]), double.Parse(data[2]), double.Parse(data[3]), (double.Parse(data[1]) + double.Parse(data[2]) + double.Parse(data[3])) / 3));
+            }
+
+        }
+    }
+}
