@@ -1,0 +1,1 @@
+TEST with .avi files or change the extension in the .sln

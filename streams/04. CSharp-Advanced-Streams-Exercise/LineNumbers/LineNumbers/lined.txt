@@ -1,0 +1,26 @@
+line 0:  
+line 1:  using System.IO;
+line 2:  
+line 3:  namespace LineNumbers
+line 4:  {
+line 5:      public static class Program
+line 6:      {
+line 7:          public static void Main(string[] args)
+line 8:          {
+line 9:              using (var reader = new StreamReader(@"../../original.txt"))
+line 10:              {
+line 11:                  using (var writer = new StreamWriter(@"../../lined.txt"))
+line 12:                  {
+line 13:                      var line = reader.ReadLine();
+line 14:                      var count = 0;
+line 15:                      while (line!=null)
+line 16:                      {
+line 17:                          writer.WriteLine("line " + count + ":  " + line);
+line 18:                          count++;
+line 19:                          line = reader.ReadLine();
+line 20:                      }
+line 21:                  }
+line 22:              }
+line 23:          }
+line 24:      }
+line 25:  }
