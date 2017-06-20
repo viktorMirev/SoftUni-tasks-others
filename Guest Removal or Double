@@ -1,0 +1,139 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+
+namespace softUniExercise
+{
+    class Program
+    {
+        static void Main()
+        {
+            var guests = Console.ReadLine().Split().ToList();
+
+            Func<string, string, bool> startsWith = (name, sub) => (name.StartsWith(sub));
+            Func<string, string, bool> endsWith = (name, sub) => (name.EndsWith(sub));
+            Func<string, int, bool> hasLen = (name, len) => (name.Length == len);
+
+
+
+            var command = Console.ReadLine();
+            while (command != "Party!")
+            {
+                var data = command.Split();
+
+                if (data[0] == "Remove")
+                {
+                    switch (data[1])
+                    {
+                        case "StartsWith":
+                            var helper = new List<string>();
+                            for (int i = 0; i < guests.Count; i++)
+                            {
+
+                                if (!startsWith(guests[i], data[2]))
+                                {
+                                    helper.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper;
+                            break;
+
+                        case "EndsWith":
+                            var helper1 = new List<string>();
+                            for (int i = 0; i < guests.Count; i++)
+                            {
+
+                                if (!endsWith(guests[i], data[2]))
+                                {
+                                    helper1.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper1;
+                            break;
+
+                        case "Length":
+                            var helper3 = new List<string>();
+                            for (int i = 0; i < guests.Count; i++)
+                            {
+
+                                if (!hasLen(guests[i], int.Parse(data[2])))
+                                {
+                                    helper3.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper3;
+                            break;
+
+
+                    }
+                }
+                else
+                {
+                    switch (data[1])
+                    {
+                        case "StartsWith":
+                            var helper = new List<string>();
+                            for(int i = 0; i < guests.Count; i++)
+                            {
+                                helper.Add(guests[i]);
+                                if (startsWith(guests[i], data[2]))
+                                {
+                                    helper.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper;
+                            break;
+
+                        case "EndsWith":
+                            var helper1 = new List<string>();
+                            for (int i = 0; i < guests.Count; i++)
+                            {
+                                helper1.Add(guests[i]);
+                                if (endsWith(guests[i], data[2]))
+                                {
+                                    helper1.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper1;
+                            break;
+
+                        case "Length":
+                            var helper3 = new List<string>();
+                            for (int i = 0; i < guests.Count; i++)
+                            {
+                                helper3.Add(guests[i]);
+                                if (hasLen(guests[i], int.Parse(data[2])))
+                                {
+                                    helper3.Add(guests[i]);
+                                }
+
+                            }
+                            guests = helper3;
+                            break;
+                            
+
+                    }
+                }
+
+                command = Console.ReadLine();
+            }
+
+
+            if (guests.Count == 0)
+            {
+                Console.WriteLine("Nobody is going to the party!");
+            }
+            else
+            {
+                Console.WriteLine(string.Join(", ", guests) + " are going to the party!");
+            }
+        }
+
+    }
+}
