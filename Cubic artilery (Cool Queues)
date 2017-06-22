@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace softUniExercise
+{
+    class Program
+    {
+        static void Main()
+        {
+            var capacity = int.Parse(Console.ReadLine());
+           // string allLines = string.Empty;
+
+
+
+            var bunkers = new Queue<string>();
+            var weaponsInCurrbunker = new Queue<int>();
+            var leftCapacity = capacity;
+
+            var line = Console.ReadLine();
+
+            while (line!="Bunker Revision")
+            {
+                var data = line.Split();
+
+                foreach (var d in data)
+                {
+                    int weapon;
+                    var isANumber = int.TryParse(d, out weapon);
+                    if (!isANumber)
+                    {
+                        bunkers.Enqueue(d);
+                    }
+                    else
+                    {
+                        var isSaved = false;
+                        while (bunkers.Count >= 2)
+                        {
+                            if (leftCapacity >= weapon)
+                            {
+                                weaponsInCurrbunker.Enqueue(weapon);
+                                leftCapacity -= weapon;
+                                isSaved = true;
+                                break;
+                            }
+
+                            var remBunker = bunkers.Dequeue();
+                            if (weaponsInCurrbunker.Count == 0)
+                            {
+                                Console.WriteLine(remBunker + " -> Empty");
+                            }
+                            else
+                            {
+                                Console.WriteLine(remBunker + " -> " + string.Join(", ", weaponsInCurrbunker));
+                            }
+                            weaponsInCurrbunker.Clear();
+                            leftCapacity = capacity;
+
+
+                        }
+                        if (!isSaved && weapon <= capacity)
+                        {
+                            while (weapon > leftCapacity)
+                            {
+                                leftCapacity += weaponsInCurrbunker.Dequeue();
+                            }
+                            leftCapacity -= weapon;
+                            weaponsInCurrbunker.Enqueue(weapon);
+                        }
+
+
+                    }
+
+                }
+                line = Console.ReadLine();
+            }
+
+            
+
+
+        }
+
+    }
+
+   
+}
