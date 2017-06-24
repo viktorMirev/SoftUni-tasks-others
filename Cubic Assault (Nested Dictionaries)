@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace softUniExercise
+{
+    class Program
+    {
+        static void Main()
+        {
+            var Regions = new Dictionary<string, Dictionary<string,long>>();
+
+            var line = Console.ReadLine();
+
+            while (line!="Count em all")
+            {
+                var data = line.Split(new string[] {" -> "}, StringSplitOptions.RemoveEmptyEntries);
+                var name = data[0];
+                var type = data[1];
+                var number = long.Parse(data[2]);
+
+                if (Regions.ContainsKey(name))
+                {                   
+                        Regions[name][type] += number;
+                }
+                else
+                {
+                    Regions.Add(name, new Dictionary<string, long>());
+                    Regions[name].Add("Green",0);
+                    Regions[name].Add("Red", 0);
+                    Regions[name].Add("Black", 0);
+                    Regions[name][type] = number;
+                }
+
+                if (Regions[name]["Green"] >= 1000000)
+                {
+                    Regions[name]["Red"] += Regions[name]["Green"] / 1000000;
+                    Regions[name]["Green"] %= 1000000;
+                }
+                if (Regions[name]["Red"] >= 1000000)
+                {
+                    Regions[name]["Black"] += Regions[name]["Red"] / 1000000;
+                    Regions[name]["Red"] %= 1000000;
+                }
+
+                line = Console.ReadLine();
+            }
+
+            foreach (var reg in Regions.OrderByDescending(a => a.Value["Black"]).ThenBy(a => a.Key.Length).ThenBy(a => a.Key))
+            {
+                Console.WriteLine(reg.Key);
+                foreach (var type in reg.Value.OrderByDescending(a => a.Value).ThenBy(a => a.Key))
+                {
+                    Console.WriteLine($"-> {type.Key} : {type.Value}");
+                }
+            }
+        }
+
+    }
+
+   
+}
