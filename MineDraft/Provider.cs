@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text;
 
-public abstract class Provider
+public abstract class Provider : Worker
 {
-    private string id;
+   
 
     private double energyOutput;
 
@@ -11,27 +11,19 @@ public abstract class Provider
     {
         var sb = new StringBuilder();
         var name = this.GetType().Name;
-        sb.AppendLine($"{name.Substring(0, name.Length - 8)} Provider - {this.id}");
+        sb.AppendLine($"{name.Substring(0, name.Length - 8)} Provider - {base.Id}");
         sb.Append($"Energy Output: {this.energyOutput}");
         return sb.ToString().Trim();
 
     }
 
 
-    public Provider(string id, double energyOutput)
+    public Provider(string id, double energyOutput) : base(id)
     {
-        this.Id = id;
         this.EnergyOutput = energyOutput;
     }
 
-    public string Id
-    {
-        get => id;
-        protected set
-        {
-            this.id = value;
-        }
-    }
+ 
 
     public virtual double EnergyOutput
     {

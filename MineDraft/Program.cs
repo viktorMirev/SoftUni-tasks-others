@@ -18,74 +18,30 @@ public class Program
                 switch (args[0])
                 {
                     case "RegisterHarvester":
-                    try
-                    {
-                        Console.WriteLine(manager.RegisterHarvester(news.ToList()));
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-                   
+                    Console.WriteLine(manager.RegisterHarvester(news.ToList()));
                     break;
+
                     case "RegisterProvider":
-                    try
-                    {
-                        Console.WriteLine(manager.RegisterProvider(news.ToList()));
-                    }            
-                    catch(Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    Console.WriteLine(manager.RegisterProvider(news.ToList()));
                     break;
 
                     case "Day":
-                    try
-                    {
-                        Console.WriteLine(manager.Day());
-                    }
-                     catch(Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    Console.WriteLine(manager.Day());
+                    break;
                        
-                        break;
+                       
                     case "Mode":
+                    Console.WriteLine(manager.Mode(news.ToList()));
+                    break;
 
-                    try
-                    {
-                        Console.WriteLine(manager.Mode(news.ToList()));
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-
-                   
-                       
-                        break;
                     case "Check":
+                    Console.WriteLine(manager.Check(news.ToList()));
+                    break;
 
-                    try
-                    {
-                        Console.WriteLine(manager.Check(news.ToList()));
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
-
-
-                    
-                        break;
                     default: break;
                     
                     
-                }
-            
-            
-         
-
+                }       
             args = Console.ReadLine().Split(new string[] {" "}, StringSplitOptions.RemoveEmptyEntries);
         }
 

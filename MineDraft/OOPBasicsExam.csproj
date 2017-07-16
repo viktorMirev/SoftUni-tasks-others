@@ -45,12 +45,15 @@
     <Compile Include="DraftManager.cs" />
     <Compile Include="HammerHarvester.cs" />
     <Compile Include="Harvester.cs" />
+    <Compile Include="HarvesterFactory.cs" />
     <Compile Include="PressureProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider.cs" />
+    <Compile Include="ProviderFactory.cs" />
     <Compile Include="SolarProvider.cs" />
     <Compile Include="SonicHarvester.cs" />
+    <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

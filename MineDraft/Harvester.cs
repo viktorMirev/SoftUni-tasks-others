@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Text;
 
-public abstract class Harvester
+public abstract class Harvester : Worker
 {
-    private string id;
-
+    
     private double oreOutput;
 
     private double energyRequirement;
 
-    private string type;
+   
 
     
 
@@ -17,30 +16,22 @@ public abstract class Harvester
     {
         var sb = new StringBuilder();
         var name = this.GetType().Name;
-        sb.AppendLine($"{name.Substring(0, name.Length-9)} Harvester - {this.id}");
+        sb.AppendLine($"{name.Substring(0, name.Length-9)} Harvester - {this.Id}");
         sb.AppendLine($"Ore Output: {this.oreOutput}");
         sb.Append($"Energy Requirement: {this.energyRequirement}");
 
         return sb.ToString().Trim();
     }
 
-    public Harvester(string id, double oreOutput, double energyRequirement)
+    public Harvester(string id, double oreOutput, double energyRequirement) : base(id)
     {
-        this.Id = id;
         this.OreOutput = oreOutput;
         this.EnergyRequirement = energyRequirement;
 
     }
 
 
-    public string Id
-    {
-        get => id;
-        protected set
-        {
-            this.id = value;
-        }
-    }
+   
 
     public virtual double OreOutput
     {
@@ -64,6 +55,6 @@ public abstract class Harvester
         
     }
 
-    public string Type { get => type; set => type = value; }
+   
 }
 
