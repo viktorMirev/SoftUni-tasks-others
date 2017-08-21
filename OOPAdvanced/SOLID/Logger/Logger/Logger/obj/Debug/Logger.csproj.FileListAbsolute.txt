@@ -1,0 +1,6 @@
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\bin\Debug\Logger.exe.config
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\bin\Debug\Logger.exe
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\bin\Debug\Logger.pdb
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\obj\Debug\Logger.exe
+C:\Users\Mirev\Desktop\Logger\Logger\Logger\obj\Debug\Logger.pdb
