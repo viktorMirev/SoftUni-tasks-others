@@ -1,0 +1,10 @@
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\RecyclingStationTests.dll
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\RecyclingStationTests.pdb
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\nunit.framework.dll
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\RecyclingStation.exe
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\RecyclingStation.pdb
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\RecyclingStation.exe.config
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\bin\Debug\nunit.framework.xml
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\obj\Debug\RecyclingStationTests.csprojResolveAssemblyReference.cache
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\obj\Debug\RecyclingStationTests.dll
+C:\Users\Mirev\Desktop\Recycling Station_Скелет\RecyclingStation\RecyclingStationTests\obj\Debug\RecyclingStationTests.pdb
